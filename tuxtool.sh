@@ -75,15 +75,19 @@ sleep 0.5
 clear
 echo ___________________
 echo running extra checks
-nohup bash $ScriptDir/check/vpncheck.sh && bash $ScriptDir/check/memcheck.sh && bash $ScriptDir/check/NativeJavaAgentCheck.sh
+nohup bash $ScriptDir/check/vpncheck.sh && bash $ScriptDir/check/memcheck.sh && bash $ScriptDir/check/NativeJavaAgentCheck.sh && bash $ScriptDir/generic/minecraftgenericclicker.sh
 rm nohup.out
 clear
-echo Done! results are in /tmp/scanresults "(use cat /tmp/scanresults.txt)" to get the output
-sleep 6.9
+pip install requests
 clear
-echo Dump results are in /tmp/scanresults "(use cat /tmp/scanresults1.txt)" to get the output of the process memory dump for further analysis
-# insert more scripts here
-sleep 6.9
-cat /tmp/scanresults.txt
-exit
+clear
+echo Generating Links...
+echo While Your Wating Please Note That The first link is flags
+echo The second Link is Memory Dump
+echo ____________________________ & python LinkGen.py
+echo ">>>>>>>>>""DONE""<<<<<<<<<"
+echo ____________________________
+rm /tmp/scanresults*.txt
+sleep 15
+read -n 1 -r -s -p $'Press Enter or Space To Close\n'
 

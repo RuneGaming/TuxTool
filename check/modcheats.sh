@@ -16,7 +16,7 @@
 CurrentUser=$USER
 Sha256Check=$(sha256sum /home/$USER/.minecraft/mods/* /home/$USER/.minecraft/mods/*/*)
 echo $Sha256Check >> /tmp/TuxTool$RANDOM.tmp
-# checks for all the popular mod cheats like raven, explicit, bape, etc. Bypassing would req the user to know how to build src or edit string with Jbyteedit
+# checks for all the popular mod cheats like raven, explicit, bape, etc. Can be easily bypassed, will be improved upon.
 if grep -q "af0cf1f38f6ad0cb9b22a3ebe8560f323112947f3232e09b41c00626db8aaf86" /tmp/TuxTool*.tmp; then
 echo -e User has been caught using LiquidBounce B72 \(Check A\) >> /tmp/scanresults.txt
 
@@ -53,6 +53,9 @@ echo -e User has been caught using Explicit B9 Type B \(Check A\) >> /tmp/scanre
 fi
 if grep -q "0390ae40f4763bec2a0c77452e096adad1289d1a5e94c3ad2156d6c815755caf" /tmp/TuxTool*.tmp; then
 echo -e User has been caught using Explicit B9 Type C \(Check A\) >> /tmp/scanresults.txt
+fi
+if grep -q "376ecfd4a962c65825b60db8bb687d5b911a5d8a4400d8b214dec9b72a755f13" /tmp/TuxTool*.tmp; then
+echo -e User has been caught using Zyklon Web Ghost Client \(Check A\) >> /tmp/scanresults.txt
 fi
 if grep -q "b6ddf8cd68d0c130183f192a751610a91d05a966050052fcf18a375d1eb1e5db" /tmp/TuxTool*.tmp; then
 echo -e User has been caught using GhostSense \(Check A\) >> /tmp/scanresults.txt

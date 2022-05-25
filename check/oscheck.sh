@@ -13,10 +13,5 @@
 #
 #    You should have received a copy of the GNU General Public License
 #    along with TuxTool.  If not, see <https://www.gnu.org/licenses/>.
-SystemBoot=$(stat -c '%Y' /dev/null)
-CurrentUser=$(users)
-MCProcessTime=$(stat -c '%Y' /home/$CurrentUser/.minecraft/launcher_log.txt)
-if [[ $SystemBoot > $MCProcessTime ]]; then
-echo "User has been detected for Generic cheat A" >> /tmp/scanresults.txt
-fi
-# generic to check if the user changed their minecraft directory
+OperatingSystem1=$(cat /etc/issue | awk '{ print $1 $2 }') 
+echo -e Welcome to TuxTool! The user is using $OperatingSystem1 >> /tmp/scanresults.txt
